@@ -1,24 +1,17 @@
 server:
-    port: 8080
-    context-path: /springboot
+    port: 55555
+    context-path:
 
 logging:
     level:
-        tk.mybatis: DEBUG
+        tk.mybatis: INFO
 
 spring:
     datasource:
-#        url: jdbc:sqlserver://192.168.16.200:1433;DatabaseName=test
-#        username: root
-#        password: 123456
-#        # \u4f7f\u7528druid\u6570\u636e\u6e90
-#        type: com.alibaba.druid.pool.DruidDataSource
-#        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-        name: test
-        url: jdbc:mysql://127.0.0.1:3306/test
+        name: localtest
+        url: jdbc:mysql://127.0.0.1:3306/localtest
         username: root
-        password: 123456
-        # \u4f7f\u7528druid\u6570\u636e\u6e90
+        password:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
         filters: stat
@@ -37,10 +30,11 @@ spring:
     mvc:
         view:
             prefix: /templates/
-            suffix: .ftl
+            #suffix: .jsp
     freemarker:
         cache: false
         request-context-attribute: request
+
 
 #\u4ee5\u4e0b\u5c5e\u6027\u4e0d\u53ef\u7528
 #mybatis:

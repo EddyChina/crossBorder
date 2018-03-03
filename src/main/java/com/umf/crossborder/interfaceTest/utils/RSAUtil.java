@@ -20,7 +20,7 @@ public class RSAUtil {
 		
 		InputStream in = null; 
 		try{
-			in = RSAUtil.class.getClassLoader().getResourceAsStream("com/umf/crossborder/interfaceTest/cer/cert_2d59.crt");
+			in = RSAUtil.class.getClassLoader().getResourceAsStream("cer/cert_2d59.crt");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
 			
@@ -38,7 +38,7 @@ public class RSAUtil {
 		InputStream in = null; 
 		
 		try{
-			in = RSAUtil.class.getClassLoader().getResourceAsStream("com/umf/crossborder/interfaceTest/cer/testMer.cert.crt");
+			in = RSAUtil.class.getClassLoader().getResourceAsStream("cer/testMer.cert.crt");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
 			
@@ -70,7 +70,7 @@ public class RSAUtil {
 		byte[] bs = new  byte[4096];
 		InputStream in = null;
 		try{
-			in = RSAUtil.class.getClassLoader().getResourceAsStream("com/umf/crossborder/interfaceTest/cer/testUmpay.key.p8");
+			in = RSAUtil.class.getClassLoader().getResourceAsStream("cer/testUmpay.key.p8");
 			in.read(bs);
 			PKCS8EncodedKeySpec peks = new PKCS8EncodedKeySpec(bs);
 			KeyFactory kf = KeyFactory.getInstance("RSA");
@@ -85,7 +85,7 @@ public class RSAUtil {
 		byte[] bs = new  byte[4096];
 		InputStream in = null;
 		try {
-			in = RSAUtil.class.getClassLoader().getResourceAsStream("com/umf/crossborder/interfaceTest/cer/3861_.key.p8");
+			in = RSAUtil.class.getClassLoader().getResourceAsStream("cer/3861_.key.p8");
 			in.read(bs);
 			PKCS8EncodedKeySpec peks = new PKCS8EncodedKeySpec(bs);
 			KeyFactory kf = KeyFactory.getInstance("RSA");

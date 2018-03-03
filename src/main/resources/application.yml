@@ -1,5 +1,5 @@
 server:
-    port: 34567
+    port: 55555
     context-path:
 
 logging:

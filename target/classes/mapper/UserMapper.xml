@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.practice.mapper.UserMapper">
-	<select id="findUser" parameterType="com.practice.model.User" resultType="com.practice.model.User">
+<mapper namespace="com.xiangchi.mapper.UserMapper">
+	<select id="findUser" parameterType="com.xiangchi.model.User" resultType="com.xiangchi.model.User">
     	select id,name, age,password from user
     	<where>
         <if test="name!=null">
@@ -13,12 +13,12 @@
         </where>
   	</select>
   	
-  	<insert id="addUser" parameterType="com.practice.model.User">
+  	<insert id="addUser" parameterType="com.xiangchi.model.User">
        insert into User(id,name,age,password)
        values(#{id},#{name},#{age},#{password})
    </insert>
    
-   <update id="updateUser" parameterType="com.practice.model.User">
+   <update id="updateUser" parameterType="com.xiangchi.model.User">
          update user set 
          <if test="name!=null">
              name = #{name}
@@ -26,7 +26,7 @@
            Where id=#{id}
    </update>
    
-   <delete id="delUser" parameterType="com.practice.model.User">
+   <delete id="delUser" parameterType="com.xiangchi.model.User">
     delete from User where id=#{id}
     </delete>
    

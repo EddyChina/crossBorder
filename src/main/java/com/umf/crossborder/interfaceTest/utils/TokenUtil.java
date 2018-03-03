@@ -16,14 +16,14 @@ public class TokenUtil {
 		InputStream in = null; 
 		
 		try {
-			in = RSAUtil.class.getClassLoader().getResourceAsStream("com/umf/crossborder/interfaceTest/cer/token.properties");
+			in = RSAUtil.class.getClassLoader().getResourceAsStream("cer/token.properties");
 
 			Properties p = new Properties();
-			
+
 			p.load(in);
-			
+
 			String clientId = p.getProperty(merId+".clientId");
-			
+
 			String clientSecret = p.getProperty(merId+".clientSecret");
 			
 			Map<String, String> head = new HashMap<String, String>();

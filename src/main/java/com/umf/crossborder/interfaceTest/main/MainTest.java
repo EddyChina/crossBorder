@@ -7,7 +7,7 @@ import com.umf.crossborder.interfaceTest.utils.TestUtil;
 
 public class MainTest {
 	
-	public static void httpPost(Object obj,String merId,String uri) throws Exception{
+	public static String httpPost(Object obj,String merId,String uri) throws Exception{
 		String urll = uri.substring(0, uri.indexOf("cbeweb_rest")+11);
 		String port = uri.substring(uri.indexOf("cbeweb_rest")+11,uri.length());
 		String json = new Gson().toJson(obj);
@@ -15,18 +15,18 @@ public class MainTest {
 		JsonPrintUtil.formatJson(json);
 		String result = TestUtil.sendMsg(merId, urll, port, json, "POST");
 		PrintUtil.printInConsole("-------响应------------");
-		JsonPrintUtil.formatJson(result);
+		return JsonPrintUtil.formatJson(result);
 		
 	}
 	
-	public static void httpGet(String merId,String uri) throws Exception{
+	public static String httpGet(String merId,String uri) throws Exception{
 		PrintUtil.printInConsole("-------请求------------");
 		String urll = uri.substring(0, uri.indexOf("cbeweb_rest")+11);
 		String port = uri.substring(uri.indexOf("cbeweb_rest")+11,uri.length());
 		JsonPrintUtil.formatJson(uri);
 		String result = TestUtil.sendMsg(merId, urll, port, null, "GET");
 		PrintUtil.printInConsole("-------响应------------");
-		JsonPrintUtil.formatJson(result);
+		return JsonPrintUtil.formatJson(result);
 		
 	}
 	
